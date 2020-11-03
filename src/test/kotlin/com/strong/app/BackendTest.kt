@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test
 import javax.inject.Inject
 
 @MicronautTest
-class BanckendTest {
+class BackendTest {
 
     @Inject
     lateinit var application: EmbeddedApplication<*>
