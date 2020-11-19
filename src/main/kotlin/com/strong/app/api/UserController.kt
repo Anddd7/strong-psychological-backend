@@ -1,0 +1,16 @@
+package com.strong.app.api
+
+import io.micronaut.http.MediaType
+import io.micronaut.http.annotation.Controller
+import io.micronaut.http.annotation.Get
+import io.micronaut.security.annotation.Secured
+import io.micronaut.security.rules.SecurityRule
+import java.security.Principal
+
+
+@Secured(SecurityRule.IS_AUTHENTICATED)
+@Controller("/user")
+class UserController {
+  @Get(value = "/profile", produces = [MediaType.APPLICATION_JSON])
+  fun profile(principal: Principal): String = principal.name
+}
